@@ -1,0 +1,207 @@
+/* --- Core Styles --- */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9fbf9;
+    color: #2d3436;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* --- Navigation & Header --- */
+.site-header {
+    background-color: #1b4332;
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.school-logo { width: 150px; height: auto; }
+
+nav {
+    background-color: #2d6a4f;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover { background-color: #1b4332; color: #95d5b2; }
+
+/* --- Hero & Sections --- */
+.hero {
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #eaf4f0 0%, #d8e9e1 100%);
+}
+
+.hero h1 { font-size: 40px; color: #1b4332; }
+
+.container { padding: 60px 20px; max-width: 1100px; margin: auto; }
+
+.section { margin-bottom: 80px; }
+
+.section h2 { color: #2d6a4f; text-align: center; font-size: 32px; margin-bottom: 40px; }
+
+/* --- Feature Cards --- */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 6px solid #52b788;
+    transition: 0.3s;
+}
+
+.card:hover { transform: translateY(-5px); }
+
+/* --- Admissions Table & Steps --- */
+.steps-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.step-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+}
+
+.step-num {
+    background: #1b4332;
+    color: white;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    font-weight: bold;
+}
+
+.admissions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background: white;
+}
+
+.admissions-table th, .admissions-table td {
+    padding: 15px;
+    border: 1px solid #eee;
+    text-align: left;
+}
+
+.admissions-table th { background: #2d6a4f; color: white; }
+
+/* --- Contact Wrapper --- */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* --- CTA, Footer & Modal --- */
+.cta { background: #1b4332; color: white; padding: 60px 20px; text-align: center; }
+
+.cta a {
+    background: #74c69d;
+    color: #1b4332;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer { background: #081c15; color: #95d5b2; text-align: center; padding: 25px; }
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 50, 30, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+}
+
+.modal-content {
+    background: white;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 400px;
+    position: relative;
+}
+
+.modal-content input, .modal-content select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.submit-btn {
+    background: #2d6a4f;
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn { position: absolute; right: 20px; top: 10px; font-size: 30px; cursor: pointer; }
+
+/* --- Security & maintenance additions --- */
+.doc-heading { text-align: center; margin-top: 40px; color: #1b4332; }
+.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }  /* honeypot: bots fill it, humans never see it */
+.form-status { margin: 10px 0 0; font-weight: 600; min-height: 1.4em; }
+.form-status.ok { color: #2d6a4f; }
+.form-status.error { color: #b00020; }
+input.invalid, select.invalid, textarea.invalid { border-color: #b00020 !important; }
+.contact-form button, .submit-btn:disabled { cursor: pointer; }
+.submit-btn:disabled { opacity: .6; cursor: not-allowed; }
+.contact-form textarea, .modal-content select { font-family: inherit; }
+.modal-content input, .modal-content select { box-sizing: border-box; }
+.modal-content { max-height: 85vh; overflow-y: auto; }
+.close-btn { background: none; border: none; line-height: 1; }
+.cta a:hover { background: #95d5b2; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid #f4a261; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+
+/* Logo sits on a white badge so the navy pencil stays visible on the dark header */
+.school-logo { background: #fff; border-radius: 16px; padding: 10px; box-sizing: border-box; }

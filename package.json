@@ -1,0 +1,11 @@
+{
+  "name": "forest-academy-site",
+  "private": true,
+  "scripts": {
+    "audit:html": "npx --yes html-validate index.html",
+    "audit:links": "npx --yes linkinator ./index.html --recurse=false",
+    "audit:lighthouse": "npx --yes lighthouse https://YOUR-DOMAIN --view --only-categories=accessibility,best-practices,seo,performance",
+    "audit:deps": "npm audit",
+    "audit": "npm run audit:html && npm run audit:links"
+  }
+}
